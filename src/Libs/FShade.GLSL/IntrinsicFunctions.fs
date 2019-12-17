@@ -320,6 +320,19 @@ module IntrinsicFunctions =
                 exactly <@ V3d.Min @>
                 exactly <@ V4d.Min @>
 
+                exactly <@ VecFun.Min : V2f * V2f -> _ @>
+                exactly <@ VecFun.Min : V2d * V2d -> _ @>
+                exactly <@ VecFun.Min : V2i * V2i -> _ @>
+                exactly <@ VecFun.Min : V2l * V2l -> _ @>
+                exactly <@ VecFun.Min : V3f * V3f -> _ @>
+                exactly <@ VecFun.Min : V3d * V3d -> _ @>
+                exactly <@ VecFun.Min : V3i * V3i -> _ @>
+                exactly <@ VecFun.Min : V3l * V3l -> _ @>
+                exactly <@ VecFun.Min : V4f * V4f -> _ @>
+                exactly <@ VecFun.Min : V4d * V4d -> _ @>
+                exactly <@ VecFun.Min : V4i * V4i -> _ @>
+                exactly <@ VecFun.Min : V4l * V4l -> _ @>
+
                 generic <@ min @> 
             ]
 
@@ -360,12 +373,26 @@ module IntrinsicFunctions =
                 exactly <@ V3d.Max @>
                 exactly <@ V4d.Max @>
 
+                exactly <@ VecFun.Max : V2f * V2f -> _ @>
+                exactly <@ VecFun.Max : V2d * V2d -> _ @>
+                exactly <@ VecFun.Max : V2i * V2i -> _ @>
+                exactly <@ VecFun.Max : V2l * V2l -> _ @>
+                exactly <@ VecFun.Max : V3f * V3f -> _ @>
+                exactly <@ VecFun.Max : V3d * V3d -> _ @>
+                exactly <@ VecFun.Max : V3i * V3i -> _ @>
+                exactly <@ VecFun.Max : V3l * V3l -> _ @>
+                exactly <@ VecFun.Max : V4f * V4f -> _ @>
+                exactly <@ VecFun.Max : V4d * V4d -> _ @>
+                exactly <@ VecFun.Max : V4i * V4i -> _ @>
+                exactly <@ VecFun.Max : V4l * V4l -> _ @>
+
                 generic <@ max @> 
             ]
 
             CIntrinsic.custom "clamp" [2; 0; 1], [
                 generic <@ clamp @>
             ]
+
             CIntrinsic.simple "clamp", [
                 exactly <@ Fun.Clamp : int8 * int8 * int8 -> _ @>
                 exactly <@ Fun.Clamp : int16 * int16 * int16 -> _ @>
@@ -378,14 +405,39 @@ module IntrinsicFunctions =
                 exactly <@ Fun.Clamp : float32 * float32 * float32 -> _ @>
                 exactly <@ Fun.Clamp : float * float * float -> _ @>
                 exactly <@ Fun.Clamp : decimal * decimal * decimal -> _ @>
+                exactly <@ VecFun.Clamp : V2f * V2f * V2f -> _ @>
+                exactly <@ VecFun.Clamp : V2f * float32 * float32 -> _ @>
+                exactly <@ VecFun.Clamp : V2d * V2d * V2d -> _ @>
+                exactly <@ VecFun.Clamp : V2d * float * float -> _ @>
+                exactly <@ VecFun.Clamp : V3f * V3f * V3f -> _ @>
+                exactly <@ VecFun.Clamp : V3f * float32 * float32 -> _ @>
+                exactly <@ VecFun.Clamp : V3d * V3d * V3d -> _ @>
+                exactly <@ VecFun.Clamp : V3d * float * float -> _ @>
+                exactly <@ VecFun.Clamp : V4f * V4f * V4f -> _ @>
+                exactly <@ VecFun.Clamp : V4f * float32 * float32 -> _ @>
+                exactly <@ VecFun.Clamp : V4d * V4d * V4d -> _ @>
+                exactly <@ VecFun.Clamp : V4d * float * float -> _ @>
             ]
 
             CIntrinsic.simple "mix", [
-                exactly <@ Fun.Lerp : float32 * float32 * float32 -> _ @>
-                exactly <@ Fun.Lerp : float * float * float -> _ @>
+                generic <@ Vec.lerp @>
             ]
 
             CIntrinsic.custom "mix" [1; 2; 0], [
+                exactly <@ Fun.Lerp : float32 * byte * byte -> _ @>
+                exactly <@ Fun.Lerp : float32 * uint16 * uint16 -> _ @>
+                exactly <@ Fun.Lerp : float32 * int16 * int16 -> _ @>
+                exactly <@ Fun.Lerp : float32 * uint32 * uint32 -> _ @>
+                exactly <@ Fun.Lerp : float32 * int32 * int32 -> _ @>
+                exactly <@ Fun.Lerp : float32 * float32 * float32 -> _ @>
+                exactly <@ Fun.Lerp : float32 * float * float -> _ @>
+                exactly <@ Fun.Lerp : float * byte * byte -> _ @>
+                exactly <@ Fun.Lerp : float * uint16 * uint16 -> _ @>
+                exactly <@ Fun.Lerp : float * int16 * int16 -> _ @>
+                exactly <@ Fun.Lerp : float * uint32 * uint32 -> _ @>
+                exactly <@ Fun.Lerp : float * int32 * int32 -> _ @>
+                exactly <@ Fun.Lerp : float * float32 * float32 -> _ @>
+                exactly <@ Fun.Lerp : float * float * float -> _ @>
                 exactly <@ VecFun.Lerp : float * V2f * V2f -> V2f @>
                 exactly <@ VecFun.Lerp : float * V2d * V2d -> V2d @>
                 exactly <@ VecFun.Lerp : float32 * V2f * V2f -> V2f @>
